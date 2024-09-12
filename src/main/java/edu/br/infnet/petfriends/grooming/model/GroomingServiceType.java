@@ -1,8 +1,5 @@
 package edu.br.infnet.petfriends.grooming.model;
 
-import lombok.Getter;
-
-@Getter
 public enum GroomingServiceType {
 
     BATH("Banho"),
@@ -11,10 +8,19 @@ public enum GroomingServiceType {
     EAR_CLEANING("Limpeza de Ouvido"),
     FULL_GROOMING("Banho e Tosa Completa");
 
-
-    private final String serviceName;
+    private String serviceName;
 
     GroomingServiceType(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
+    // Getter
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    // Setter
+    public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
 

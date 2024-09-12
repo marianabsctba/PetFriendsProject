@@ -19,7 +19,7 @@ public class CreateOrderCommand extends BaseCommand<String> {
         this.groomingAppointment = groomingAppointment;
     }
 
-    // Getters and Setters
+
     public String getDescription() {
         return description;
     }

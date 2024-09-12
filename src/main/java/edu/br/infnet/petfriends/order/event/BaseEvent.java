@@ -1,13 +1,20 @@
 package edu.br.infnet.petfriends.order.event;
 
-import lombok.Getter;
 
-@Getter
 public abstract class BaseEvent<T> {
-    private final T id;
+    private T id;
 
     protected BaseEvent(T id) {
         this.id = id;
     }
 
+    // Getter
+    public T getId() {
+        return id;
+    }
+
+    // Setter
+    public void setId(T id) {
+        this.id = id;
+    }
 }

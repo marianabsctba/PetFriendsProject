@@ -1,8 +1,5 @@
 package edu.br.infnet.petfriends.product.model;
 
-import lombok.Getter;
-
-@Getter
 public enum ProductsEnum {
     PET_SHAMPOO("Shampoo para Pets", 20.00, "Shampoo para pets, adequado para todas as raças."),
     DOG_FOOD("Ração para Cachorro", 50.50, "Ração premium para cachorros com nutrição equilibrada."),
@@ -10,8 +7,7 @@ public enum ProductsEnum {
     PET_TOY("Brinquedo para Pets", 15.00, "Brinquedo durável para pets brincarem."),
     DOG_LEASH("Coleira para Cachorro", 25.00, "Coleira resistente para passear com seu cachorro."),
     CAT_LITTER("Areia para Gato", 10.00, "Areia absorvente para fácil limpeza."),
-    PET_BED("Cama para Pet", 60.00, "Cama confortável para o descanso do seu pet.")
-    ;
+    PET_BED("Cama para Pet", 60.00, "Cama confortável para o descanso do seu pet.");
 
     private final String productName;
     private final double price;
@@ -21,6 +17,19 @@ public enum ProductsEnum {
         this.productName = productName;
         this.price = price;
         this.description = description;
+    }
+
+    // Getters
+    public String getProductName() {
+        return productName;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     @Override

@@ -1,33 +1,50 @@
 package edu.br.infnet.petfriends.grooming.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 
-@Setter
-@Getter
 @Entity
 public class GroomingAppointment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
+    private String petName;
 
-    private String appointmentDate;
-
-    private String serviceType;
-
-    private String clientId;
+    @Enumerated(EnumType.STRING)
+    private GroomingServiceType serviceType;
 
     public GroomingAppointment() {}
 
-    public GroomingAppointment(String appointmentDate, String serviceType, String clientId) {
-        this.appointmentDate = appointmentDate;
+    public GroomingAppointment(String id, String petName, GroomingServiceType serviceType) {
+        this.id = id;
+        this.petName = petName;
         this.serviceType = serviceType;
-        this.clientId = clientId;
     }
 
+    // Getters and Setters
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPetName() {
+        return petName;
+    }
+
+    public void setPetName(String petName) {
+        this.petName = petName;
+    }
+
+    public GroomingServiceType getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(GroomingServiceType serviceType) {
+        this.serviceType = serviceType;
+    }
 }
